@@ -1,10 +1,17 @@
+import React from 'react';
+import Video from './components/Video'
 
-import './App.css';
 
 function App() {
+
   return (
-    <div>Hello World</div>
+    <div className="App">
+    <Video/>
+    </div>
   );
 }
-
+// Video by Pressmaster from Pexels
+//Video by fauxels from Pexels
+//Video by cottonbro from Pexels
+//Video by cottonbro from Pexels
 export default App;
