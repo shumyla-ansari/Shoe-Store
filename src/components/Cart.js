@@ -77,7 +77,7 @@ export default function Cart() {
            }
 
            <div className="total" style={{ margin : 10, display: "in-line" }}>
-               <h3>Total: £  {total}</h3> <div style={{ display: "in-line" }}><Link to="/payment">Payment</Link></div> 
+               <h3>Total: £  {total}</h3> <div style={{ display: "in-line" }}><Link to="/payment">Checkout</Link></div> 
            </div>
         </>
     )
