@@ -1,7 +1,4 @@
 import React from 'react'
-import runningman from '../videos/runningman.mp4'
-import menexercise from '../videos/menexercise.mp4'
-import runningwoman from '../videos/runningwoman.mp4'
 import shoevideo from '../videos/shoevideo.mp4'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -10,6 +7,11 @@ import '../App.css'
 const useStyles = makeStyles((theme) => ({
     root: {
       margin: theme.spacing(1),
+
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+      textAlign: 'right',
+      display: 'flex',
       position: "relative",
       zIndex: 1,
       marginLeft: 0,
@@ -40,10 +42,10 @@ function Video() {
         <div className="container">
            <video autoPlay playsInline loop muted src={shoevideo} /> 
            <h1 className="h1">READY YOUR RUN
-<Button className={classes.root}variant="contained" color="primary">
+
+</h1><Button className={classes.root}variant="contained" color="primary">
         Shop
       </Button>
-</h1>
         </div>
     )
 }
