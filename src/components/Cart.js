@@ -1,8 +1,6 @@
-import React,{useContext, useState, useEffect} from 'react'
-import {DataContext} from './Context'
-import Colors from './Colors'
-import Sizes from './Sizes'
-import {Link} from 'react-router-dom'
+import React,{ useContext, useState, useEffect } from 'react'
+import { DataContext } from './Context'
+import { Link } from 'react-router-dom'
 import '../App.css'
 
 export default function Cart() {
@@ -16,7 +14,7 @@ export default function Cart() {
             const res = cart.reduce((prev, item) => {
                 return prev + (item.price * item.count)
             },0)
-            setTotal(res)
+            setTotal(res.toFixed(2))
         }
         getTotal()
     },[cart])
@@ -57,17 +55,13 @@ export default function Cart() {
         <>
            {
                cart.map(product =>(
-                   <div className="details cart" key={product._id}>
+                   <div className="details cart"  key={product._id}>
                        <div className="img-container" 
-                       style={{backgroundImage: `url(${product.images[0]})`}} />
+                       style={{backgroundImage: `url(${product.images[0]})`, }} />
 
-                       <div className="box-details">
+                       <div className="box-details" style={{ margin: 10 }} >
                            <h2 title={product.title}>{product.title}</h2>
                            <h3>${product.price}</h3>
-                           <Colors colors={product.colors} />
-                           <Sizes sizes={product.sizes} />
-                           <p>{product.description}</p>
-                           <p>{product.content}</p>
                            
                            <div className="amount">
                                <button className="count" onClick={() => reduction(product._id)}> - </button>
@@ -82,9 +76,8 @@ export default function Cart() {
                ))
            }
 
-           <div className="total">
-               <Link to="/payment">Payment</Link>
-               <h3>Total: $ {total}</h3>
+           <div className="total" style={{ margin : 10, display: "in-line" }}>
+               <h3>Total: £  {total}</h3> <div style={{ display: "in-line" }}><Link to="/payment">Payment</Link></div> 
            </div>
         </>
     )
