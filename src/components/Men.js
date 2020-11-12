@@ -68,7 +68,7 @@ function Men() {
                     <Link to={`/men/${product._id}`}>{product.title}</Link>
 
                     <p>{"Men's Shoe"}</p>
-                    <h4>${product.price}</h4>
+                    <h4>£ {product.price}</h4>
                   </CardContent>
                   <IconButton aria-label='add to favorites'>
                     <FavoriteIcon />
